@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web Viewer View Controller-->
+        <scene sceneID="mSE-LO-7Q1">
+            <objects>
+                <viewController storyboardIdentifier="WebViewerViewController" id="XfJ-i2-hph" customClass="WebViewerViewController" customModule="AI_Photographer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uMK-Wl-6yi"/>
+                        <viewControllerLayoutGuide type="bottom" id="RHf-rQ-Fjq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hb4-lK-4NM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-8u-C62">
+                                <rect key="frame" x="0.0" y="44" width="414" height="788"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaC-4a-fQd">
+                                <rect key="frame" x="0.0" y="832" width="414" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8Q-h5-LkP">
+                                        <rect key="frame" x="30" y="18" width="44" height="28"/>
+                                        <state key="normal" image="webViewerBackImage"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="XfJ-i2-hph" eventType="touchUpInside" id="M4b-Dk-V6i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNJ-t3-u5O">
+                                        <rect key="frame" x="340" y="18" width="44" height="28"/>
+                                        <state key="normal" image="webViewerCloseImage"/>
+                                        <connections>
+                                            <action selector="closeButtonAction:" destination="XfJ-i2-hph" eventType="touchUpInside" id="ey9-Bf-ui7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="86d-iI-Bzj"/>
+                                    <constraint firstAttribute="trailing" secondItem="yNJ-t3-u5O" secondAttribute="trailing" constant="30" id="B1S-bt-2i9"/>
+                                    <constraint firstItem="P8Q-h5-LkP" firstAttribute="leading" secondItem="TaC-4a-fQd" secondAttribute="leading" constant="30" id="EZT-co-Sfg"/>
+                                    <constraint firstItem="yNJ-t3-u5O" firstAttribute="centerY" secondItem="P8Q-h5-LkP" secondAttribute="centerY" id="eLg-H3-GuZ"/>
+                                    <constraint firstItem="P8Q-h5-LkP" firstAttribute="centerY" secondItem="TaC-4a-fQd" secondAttribute="centerY" id="uC1-ZB-X08"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FMv-dc-DLn">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TaC-4a-fQd" secondAttribute="bottom" id="1ct-Id-OdA"/>
+                            <constraint firstItem="ANJ-8u-C62" firstAttribute="leading" secondItem="hb4-lK-4NM" secondAttribute="leading" id="6Pm-7Y-ZsM"/>
+                            <constraint firstAttribute="trailing" secondItem="TaC-4a-fQd" secondAttribute="trailing" id="8Ij-gg-03b"/>
+                            <constraint firstItem="TaC-4a-fQd" firstAttribute="leading" secondItem="hb4-lK-4NM" secondAttribute="leading" id="CcS-Wv-zud"/>
+                            <constraint firstItem="ANJ-8u-C62" firstAttribute="top" secondItem="uMK-Wl-6yi" secondAttribute="bottom" id="Cja-DM-tOQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ANJ-8u-C62" secondAttribute="trailing" id="OUr-Y8-hLS"/>
+                            <constraint firstItem="FMv-dc-DLn" firstAttribute="centerY" secondItem="hb4-lK-4NM" secondAttribute="centerY" id="VJc-5s-pUt"/>
+                            <constraint firstItem="FMv-dc-DLn" firstAttribute="centerX" secondItem="hb4-lK-4NM" secondAttribute="centerX" id="ucR-j6-xwe"/>
+                            <constraint firstItem="TaC-4a-fQd" firstAttribute="top" secondItem="ANJ-8u-C62" secondAttribute="bottom" id="whl-FR-4vj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="FMv-dc-DLn" id="y41-5w-T0d"/>
+                        <outlet property="backButton" destination="P8Q-h5-LkP" id="qma-h7-RyM"/>
+                        <outlet property="bottomPanelView" destination="TaC-4a-fQd" id="GUf-oH-SUt"/>
+                        <outlet property="webView" destination="ANJ-8u-C62" id="kcg-My-A03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N12-cz-MKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527.536231884058" y="509.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="webViewerBackImage" width="44" height="28"/>
+        <image name="webViewerCloseImage" width="44" height="28"/>
+    </resources>
+</document>
